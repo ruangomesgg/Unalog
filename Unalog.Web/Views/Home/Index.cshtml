@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Início";
+}
+
+<section class="home-hero">
+    <div class="home-copy">
+        <p class="eyebrow">Gestão de parceiros de transporte</p>
+        <h1>Uma operação logística começa com bons parceiros.</h1>
+        <p class="hero-description">
+            Centralize os dados dos motoristas parceiros e mantenha as informações operacionais organizadas em um só lugar.
+        </p>
+        <div class="hero-actions">
+            <a asp-controller="Motorista" asp-action="Cadastrar" class="btn btn-primary">Cadastrar motorista <span aria-hidden="true">&rarr;</span></a>
+            <a asp-controller="Motorista" asp-action="Index" class="btn btn-outline-light">Consultar motoristas</a>
+        </div>
+    </div>
+    <aside class="operations-card" aria-label="Resumo das áreas do sistema">
+        <div class="operations-card-header">
+            <span>PAINEL DE OPERAÇÕES</span>
+            <span class="live-indicator">Sistema local</span>
+        </div>
+        <div class="route-visual" aria-hidden="true">
+            <span class="route-node">CAD</span><span class="route-line"></span><span class="route-node">OPS</span>
+        </div>
+        <div class="route-caption"><span>Cadastro</span><span>Operação</span></div>
+        <div class="operations-summary">
+            <div><strong>Motoristas</strong><span>Cadastro e consulta</span></div>
+            <div><strong>Veículos</strong><span>Dados operacionais</span></div>
+        </div>
+    </aside>
+</section>
+
+<section class="feature-grid" aria-label="Recursos do sistema">
+    <article class="feature-card">
+        <span class="feature-number">01</span>
+        <div><h2>Cadastro organizado</h2><p>Reúna os dados de contato, identificação e veículo de cada motorista parceiro.</p></div>
+    </article>
+    <article class="feature-card">
+        <span class="feature-number">02</span>
+        <div><h2>Informações operacionais</h2><p>Consulte os indicadores de treinamento para cargas especiais e rastreador do veículo.</p></div>
+    </article>
+</section>

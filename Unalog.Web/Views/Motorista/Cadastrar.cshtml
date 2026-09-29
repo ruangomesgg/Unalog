@@ -1,0 +1,30 @@
+@model Unalog.Web.ViewModels.MotoristaViewModel
+
+@{
+    ViewData["Title"] = "Cadastro de motorista";
+}
+
+<div class="page-heading">
+    <div><p class="eyebrow">Cadastro de parceiros de transporte</p><h1>Cadastro de motorista</h1><p class="page-description">Preencha os dados para incluir um motorista na operação.</p></div>
+</div>
+
+<form asp-action="Cadastrar" method="post" class="form-card">
+    <h2 class="form-section-title"><span class="section-number">01</span> Dados do motorista e do veículo</h2>
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <div class="row g-3">
+        <div class="col-md-6"><label asp-for="Nome" class="form-label"></label><input asp-for="Nome" class="form-control" autocomplete="name" /><span asp-validation-for="Nome" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" autocomplete="email" /><span asp-validation-for="Email" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="Telefone" class="form-label"></label><input asp-for="Telefone" class="form-control" autocomplete="tel" /><span asp-validation-for="Telefone" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="ModeloVeiculo" class="form-label"></label><input asp-for="ModeloVeiculo" class="form-control" /><span asp-validation-for="ModeloVeiculo" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="Matricula" class="form-label"></label><input asp-for="Matricula" class="form-control" /><span asp-validation-for="Matricula" class="text-danger"></span></div>
+        <div class="col-md-6 d-flex flex-column justify-content-end gap-2">
+            <div class="form-check"><input asp-for="PossuiTreinamentoCargaEspecial" class="form-check-input" /><label asp-for="PossuiTreinamentoCargaEspecial" class="form-check-label"></label></div>
+            <div class="form-check"><input asp-for="PossuiRastreador" class="form-check-input" /><label asp-for="PossuiRastreador" class="form-check-label"></label></div>
+        </div>
+    </div>
+    <div class="form-actions"><button type="submit" class="btn btn-primary">Salvar cadastro</button><a asp-action="Index" class="btn btn-outline-secondary">Voltar para a lista</a></div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

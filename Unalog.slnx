@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Unalog.Core/Unalog.Core.csproj" />
+  <Project Path="Unalog.Infrastructure/Unalog.Infrastructure.csproj" />
+  <Project Path="Unalog.Tests/Unalog.Tests.csproj" />
+  <Project Path="Unalog.Web/Unalog.Web.csproj" />
+</Solution>

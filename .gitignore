@@ -1,0 +1,18 @@
+# .NET build output
+**/bin/
+**/obj/
+.vs/
+
+# Local database and runtime logs
+**/Logs/
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# IDE and operating system files
+.vscode/
+.idea/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini

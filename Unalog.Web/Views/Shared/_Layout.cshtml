@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gestão Logística</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Unalog.Web.styles.css" asp-append-version="true" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <div class="topline">
+            <div class="container topline-content">
+                <span>Gestão de motoristas parceiros</span>
+                <span>Planejamento, segurança e <strong>logística personalizada</strong></span>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index" aria-label="Página inicial">
+                    <span class="brand-mark" aria-hidden="true">↗</span>
+                    <span class="brand-copy">
+                        <strong>GESTÃO LOGÍSTICA</strong>
+                        <small>MOTORISTAS PARCEIROS</small>
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                        aria-controls="mainNavigation" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Motorista" asp-action="Index">Motoristas cadastrados</a></li>
+                        <li class="nav-item"><a class="nav-link nav-cta" asp-controller="Motorista" asp-action="Cadastrar">Cadastrar motorista</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="container app-main flex-grow-1">
+        @RenderBody()
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <span class="footer-brand">Gestão Logística <span class="footer-note">| Operações de transporte</span></span>
+            <span class="footer-note">&copy; @DateTime.Now.Year - Sistema de gestão logística</span>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

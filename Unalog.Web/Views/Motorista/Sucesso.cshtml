@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Cadastro concluído";
+}
+
+<section class="success-card">
+    <span class="success-icon" aria-hidden="true">&#10003;</span>
+    <p class="eyebrow justify-content-center">Cadastro registrado</p>
+    <h1>Cadastro concluído!</h1>
+    <p>Os dados do motorista foram salvos com sucesso.</p>
+    <div class="hero-actions justify-content-center mt-0">
+        <a asp-controller="Motorista" asp-action="Index" class="btn btn-primary">Ver motoristas</a>
+        <a asp-controller="Motorista" asp-action="Cadastrar" class="btn btn-outline-secondary">Cadastrar outro</a>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+@using System.Linq
+@model IEnumerable<Unalog.Web.ViewModels.MotoristaViewModel>
+
+@{
+    ViewData["Title"] = "Motoristas cadastrados";
+    var motoristas = Model?.ToList() ?? new List<Unalog.Web.ViewModels.MotoristaViewModel>();
+}
+
+<div class="page-heading">
+    <div>
+        <p class="eyebrow">Gestão de parceiros</p>
+        <h1>Motoristas cadastrados</h1>
+        <p class="page-description">Consulte e atualize os dados dos motoristas parceiros.</p>
+    </div>
+    <a asp-action="Cadastrar" class="btn btn-primary">+ Cadastrar motorista</a>
+</div>
+
+<section class="table-card">
+    <div class="table-toolbar">
+        <strong>Cadastro de motoristas</strong>
+        <span class="record-count">@motoristas.Count motorista(s)</span>
+    </div>
+    @if (motoristas.Count == 0)
+    {
+        <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">M</span>
+            <h2>Nenhum motorista cadastrado</h2>
+            <p>Cadastre o primeiro parceiro para começar a organizar sua operação.</p>
+            <a asp-action="Cadastrar" class="btn btn-primary">Cadastrar motorista</a>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead><tr>
+                    <th>Motorista</th><th>E-mail</th><th>Telefone</th><th>Modelo do veículo</th>
+                    <th>Matrícula</th><th>Treinamento especial</th><th>Rastreador</th><th>Ações</th>
+                </tr></thead>
+                <tbody>
+                    @foreach (var motorista in motoristas)
+                    {
+                        <tr>
+                            <td class="driver-name">@motorista.Nome</td>
+                            <td>@motorista.Email</td>
+                            <td>@motorista.Telefone</td>
+                            <td>@motorista.ModeloVeiculo</td>
+                            <td>@motorista.Matricula</td>
+                            <td><span class="status-pill @(motorista.PossuiTreinamentoCargaEspecial ? "status-yes" : "status-no")">@(motorista.PossuiTreinamentoCargaEspecial ? "Sim" : "Não")</span></td>
+                            <td><span class="status-pill @(motorista.PossuiRastreador ? "status-yes" : "status-no")">@(motorista.PossuiRastreador ? "Sim" : "Não")</span></td>
+                            <td><a asp-action="Editar" asp-route-id="@motorista.Id" class="btn btn-sm btn-outline-primary">Editar</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>
